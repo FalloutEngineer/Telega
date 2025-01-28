@@ -12,4 +12,6 @@ export const OColor = {
   MenuBackgroundDark: "rgba(0, 0, 0, 0.142)",
   HighlightDark: "#646cff",
   NameDark: "rgba(255, 255, 255, 0.87)",
+  TextBackgroundColorWhite: "rgba(0, 0, 0, 0.16)",
+  TextBackgroundColorDark: "rgba(255, 255, 255, 0.16)",
 } as const

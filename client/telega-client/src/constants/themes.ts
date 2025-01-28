@@ -9,6 +9,7 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--separator-color": OColor.Separator,
     "--highlight-color": OColor.HighlightWhite,
     "--name-color": OColor.NameWhite,
+    "--text-background-color": OColor.TextBackgroundColorWhite,
   },
   dark: {
     "--text-color": OColor.TextDark,
@@ -18,5 +19,6 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--separator-color": OColor.Separator,
     "--highlight-color": OColor.HighlightDark,
     "--name-color": OColor.NameDark,
+    "--text-background-color": OColor.TextBackgroundColorDark,
   },
 }

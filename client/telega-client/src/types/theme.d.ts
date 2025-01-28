@@ -3,6 +3,7 @@ type ThemeType = "light" | "dark"
 interface Theme {
   "--text-color": Color
   "--main-text-color": Color
+  "--text-background-color": Color
   "--background-color": Color
   "--menu-background-color": Color
   "--separator-color": Color
