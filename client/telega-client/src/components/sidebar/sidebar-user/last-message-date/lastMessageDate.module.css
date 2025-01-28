@@ -1,0 +1,9 @@
+.date {
+  font-size: var(--font-size);
+  color: var(--text-color);
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+}

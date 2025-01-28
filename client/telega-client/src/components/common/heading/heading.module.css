@@ -6,4 +6,13 @@
   margin: 0;
   font-size: var(--heading-font-size);
   font-weight: 400;
+
+  color: var(--main-text-color);
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  display: block;
+  height: fit-content;
 }

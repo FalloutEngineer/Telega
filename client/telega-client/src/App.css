@@ -22,6 +22,18 @@
   background-color: var(--background-color);
 
   --heading-font-size: 16px;
+  --font-size: 14px;
+
+  --sidebar-height: 50px;
+  --sidebar-padding: 10px;
+
+  --online-dot-size: 12px;
+
+  --sidebar-circle-size: 25px;
+
+  --sidebar-gap: 10px;
+
+  --sidebar-width: 20%;
 }
 
 .logo {

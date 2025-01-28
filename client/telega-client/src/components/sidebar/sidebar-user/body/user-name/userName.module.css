@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.name {
+  font-size: var(--font-size);
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  display: block;
+  height: fit-content;
+
+  overflow: hidden;
+
+  max-width: 100%;
+}

@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: calc(var(--sidebar-height));
+
+  aspect-ratio: 1;
+
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+.image {
+  max-height: var(--sidebar-height);
+  max-width: var(--sidebar-height);
+
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+}
+
+.online::after {
+  content: "";
+
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  max-width: var(--online-dot-size);
+  max-height: var(--online-dot-size);
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--highlight-color);
+
+  border-radius: 50%;
+}

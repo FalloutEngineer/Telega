@@ -6,7 +6,10 @@ interface Theme {
   "--text-background-color": Color
   "--background-color": Color
   "--menu-background-color": Color
+  "--menu-background-highlighted": Color
   "--separator-color": Color
   "--highlight-color": Color
   "--name-color": Color
+  "--sidebar-circle-inactive": Color
+  "--sidebar-circle-active": Color
 }
