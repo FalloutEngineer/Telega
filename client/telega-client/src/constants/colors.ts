@@ -1,0 +1,15 @@
+export const OColor = {
+  TextWhite: "rgba(0, 0, 0, 0.87)",
+  TextMainWhite: "rgba(0, 0, 0, 0.87)",
+  BackgroundWhite: "#dedede",
+  MenuBackgroundWhite: "rgba(255, 255, 255, 0.142)",
+  Separator: "rgba(0, 0, 0, 0.178)",
+  HighlightWhite: "#4E3366",
+  NameWhite: "rgba(0, 0, 0, 0.87)",
+  TextDark: "rgba(255, 255, 255, 0.87)",
+  TextMainDark: "rgba(255, 255, 255, 0.87)",
+  BackgroundDark: "#242424",
+  MenuBackgroundDark: "rgba(0, 0, 0, 0.142)",
+  HighlightDark: "#646cff",
+  NameDark: "rgba(255, 255, 255, 0.87)",
+} as const
