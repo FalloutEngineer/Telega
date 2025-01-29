@@ -5,7 +5,7 @@ interface Chat {
   lastMessage: string
   messages: number
   isOnline: boolean
-  lastMessageDate?: Date
+  lastMessageDate?: string
 }
 
 type Chats = Chat[]

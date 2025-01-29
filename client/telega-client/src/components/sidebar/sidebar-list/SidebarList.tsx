@@ -15,7 +15,7 @@ const SidebarList = React.memo(() => {
       userID: "1",
       username: "John Doe",
       lastMessage: "Hello, world!",
-      lastMessageDate: new Date(),
+      lastMessageDate: new Date().toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -25,7 +25,7 @@ const SidebarList = React.memo(() => {
       userID: "2",
       username: "Johny Doel",
       lastMessage: "How are you?",
-      lastMessageDate: new Date("2024-12-29T12:00:00"),
+      lastMessageDate: new Date("2024-12-29T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -35,7 +35,7 @@ const SidebarList = React.memo(() => {
       userID: "3",
       username: "Jane Doe",
       lastMessage: "What's up?",
-      lastMessageDate: new Date("2023-06-14T12:00:00"),
+      lastMessageDate: new Date("2023-06-14T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -45,7 +45,7 @@ const SidebarList = React.memo(() => {
       userID: "4",
       username: "John Doe",
       lastMessage: "Hello, world!",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -55,7 +55,7 @@ const SidebarList = React.memo(() => {
       userID: "5",
       username: "Johny Doel",
       lastMessage: "How are you?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -65,7 +65,7 @@ const SidebarList = React.memo(() => {
       userID: "6",
       username: "Jane Doe",
       lastMessage: "What's up?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -75,7 +75,7 @@ const SidebarList = React.memo(() => {
       userID: "7",
       username: "John Doe",
       lastMessage: "Hello, world!",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -85,7 +85,7 @@ const SidebarList = React.memo(() => {
       userID: "8",
       username: "Johny Doel",
       lastMessage: "How are you?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -95,7 +95,7 @@ const SidebarList = React.memo(() => {
       userID: "9",
       username: "Jane Doe",
       lastMessage: "What's up?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -105,7 +105,7 @@ const SidebarList = React.memo(() => {
       userID: "10",
       username: "John Doe",
       lastMessage: "Hello, world!",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -115,7 +115,7 @@ const SidebarList = React.memo(() => {
       userID: "11",
       username: "Johny Doel",
       lastMessage: "How are you?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -125,7 +125,7 @@ const SidebarList = React.memo(() => {
       userID: "12",
       username: "Jane Doe",
       lastMessage: "What's up?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -135,7 +135,7 @@ const SidebarList = React.memo(() => {
       userID: "13",
       username: "John Doe",
       lastMessage: "Hello, world!",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -145,7 +145,7 @@ const SidebarList = React.memo(() => {
       userID: "14",
       username: "Johny Doel",
       lastMessage: "How are you?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -155,7 +155,7 @@ const SidebarList = React.memo(() => {
       userID: "15",
       username: "Jane Doe",
       lastMessage: "What's up?",
-      lastMessageDate: new Date("2023-06-05T12:00:00"),
+      lastMessageDate: new Date("2023-06-05T12:00:00").toDateString(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
