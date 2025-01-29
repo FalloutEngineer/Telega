@@ -1,10 +1,15 @@
-import React, { useState } from "react"
+import React, { useCallback, useMemo, useState } from "react"
 import SidebarUser from "../sidebar-user/SidebarUser"
 import styles from "./sidebarList.module.css"
 import { Virtuoso } from "react-virtuoso"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../../../redux/store"
+import { setSelectedUser } from "../../../redux/slices/sidebarSelectedUser"
+
+type SelectedUserIndex = number | null
 
 export default function SidebarList() {
-  const [chats, setChats] = useState<Chats | null>([
+  const [chats] = useState<Chats | null>([
     {
       userID: "1",
       username: "John Doe",
@@ -142,12 +147,35 @@ export default function SidebarList() {
     },
   ])
 
+  const selectedUser = useSelector(
+    (state: RootState) => state.selectedUser.userID
+  )
+
+  const dispatch = useDispatch()
+
+  const selectedUserIndex: SelectedUserIndex = useMemo(() => {
+    if (chats) {
+      return chats.findIndex((user) => user.userID === selectedUser)
+    }
+    return null
+  }, [chats, selectedUser])
+
+  const handleUserClick = useCallback((index: string) => {
+    dispatch(setSelectedUser(index))
+  }, [])
+
   return (
     <div className={styles.list}>
       {chats ? (
         <Virtuoso
           data={chats}
-          itemContent={(_, data) => <SidebarUser {...data} />}
+          itemContent={(index, data) => (
+            <SidebarUser
+              {...data}
+              isSelected={index === selectedUserIndex}
+              onClick={handleUserClick}
+            />
+          )}
           className={styles.virtuoso}
         />
       ) : (

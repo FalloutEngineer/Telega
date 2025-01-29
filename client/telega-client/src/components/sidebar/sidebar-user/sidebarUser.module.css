@@ -21,3 +21,7 @@
 .container:hover {
   background-color: var(--menu-background-highlighted);
 }
+
+.selected {
+  background-color: var(--highlight-color) !important;
+}

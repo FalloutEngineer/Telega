@@ -4,16 +4,28 @@ import Avatar from "../../common/avatar/Avatar"
 import SidebarUserBody from "./body/SidebarUserBody"
 
 interface SidebarUserProps {
+  userID: string
   username: string
   photoURL: string
   lastMessage?: string
   messages: number
   isOnline?: boolean
+  isSelected?: boolean
+  onClick?: (index: string) => unknown
 }
 
-export default function SidebarUser(props: SidebarUserProps) {
+const SidebarUser = React.memo((props: SidebarUserProps) => {
   return (
-    <button className={styles.container}>
+    <button
+      className={`${styles.container} ${
+        props.isSelected ? styles.selected : ""
+      }`}
+      onClick={() => {
+        if (props.onClick) {
+          props.onClick(props.userID)
+        }
+      }}
+    >
       <Avatar
         url={props.photoURL}
         alt={props.username + " avatar"}
@@ -26,4 +38,6 @@ export default function SidebarUser(props: SidebarUserProps) {
       />
     </button>
   )
-}
+})
+
+export default SidebarUser

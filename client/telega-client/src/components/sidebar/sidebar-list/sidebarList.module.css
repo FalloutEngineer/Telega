@@ -6,11 +6,11 @@
   padding: 0;
   margin: 0;
 
-  height: calc(100vh - 24px);
+  height: calc(100vh - var(--search-height));
 }
 
 .virtuoso {
-  height: calc(100vh - 24px);
+  height: calc(100vh - var(--search-height));
 
   overflow-y: scroll;
   position: relative;
