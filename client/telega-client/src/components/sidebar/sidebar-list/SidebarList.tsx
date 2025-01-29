@@ -5,15 +5,17 @@ import { Virtuoso } from "react-virtuoso"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../../redux/store"
 import { setSelectedUser } from "../../../redux/slices/sidebarSelectedUser"
+import SidebarLoading from "./sidebar-loading/SidebarLoading"
 
 type SelectedUserIndex = number | null
 
-export default function SidebarList() {
+const SidebarList = React.memo(() => {
   const [chats] = useState<Chats | null>([
     {
       userID: "1",
       username: "John Doe",
       lastMessage: "Hello, world!",
+      lastMessageDate: new Date(),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -23,6 +25,7 @@ export default function SidebarList() {
       userID: "2",
       username: "Johny Doel",
       lastMessage: "How are you?",
+      lastMessageDate: new Date("2024-12-29T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -32,6 +35,7 @@ export default function SidebarList() {
       userID: "3",
       username: "Jane Doe",
       lastMessage: "What's up?",
+      lastMessageDate: new Date("2023-06-14T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -41,6 +45,7 @@ export default function SidebarList() {
       userID: "4",
       username: "John Doe",
       lastMessage: "Hello, world!",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -50,6 +55,7 @@ export default function SidebarList() {
       userID: "5",
       username: "Johny Doel",
       lastMessage: "How are you?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -59,6 +65,7 @@ export default function SidebarList() {
       userID: "6",
       username: "Jane Doe",
       lastMessage: "What's up?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -68,6 +75,7 @@ export default function SidebarList() {
       userID: "7",
       username: "John Doe",
       lastMessage: "Hello, world!",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -77,6 +85,7 @@ export default function SidebarList() {
       userID: "8",
       username: "Johny Doel",
       lastMessage: "How are you?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -86,6 +95,7 @@ export default function SidebarList() {
       userID: "9",
       username: "Jane Doe",
       lastMessage: "What's up?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -95,6 +105,7 @@ export default function SidebarList() {
       userID: "10",
       username: "John Doe",
       lastMessage: "Hello, world!",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -104,6 +115,7 @@ export default function SidebarList() {
       userID: "11",
       username: "Johny Doel",
       lastMessage: "How are you?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -113,6 +125,7 @@ export default function SidebarList() {
       userID: "12",
       username: "Jane Doe",
       lastMessage: "What's up?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -122,6 +135,7 @@ export default function SidebarList() {
       userID: "13",
       username: "John Doe",
       lastMessage: "Hello, world!",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 10,
@@ -131,6 +145,7 @@ export default function SidebarList() {
       userID: "14",
       username: "Johny Doel",
       lastMessage: "How are you?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 5,
@@ -140,6 +155,7 @@ export default function SidebarList() {
       userID: "15",
       username: "Jane Doe",
       lastMessage: "What's up?",
+      lastMessageDate: new Date("2023-06-05T12:00:00"),
       photoURL:
         "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
       messages: 8,
@@ -179,8 +195,10 @@ export default function SidebarList() {
           className={styles.virtuoso}
         />
       ) : (
-        "Loading..."
+        <SidebarLoading />
       )}
     </div>
   )
-}
+})
+
+export default SidebarList

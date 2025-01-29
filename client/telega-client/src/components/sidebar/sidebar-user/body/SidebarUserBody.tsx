@@ -8,6 +8,7 @@ import UserName from "./user-name/UserName"
 interface SidebarUserBodyProps {
   name: string
   lastMessage?: string
+  lastMessageDate?: string
   messages: number
   date?: Date
 }
@@ -17,7 +18,9 @@ export default function SidebarUserBody(props: SidebarUserBodyProps) {
     <div className={styles.container}>
       <div className={styles.upper}>
         <UserName name={props.name} />
-        <LastMessageDate date={new Date()} />
+        <LastMessageDate
+          date={props.lastMessageDate || new Date().toDateString()}
+        />
       </div>
       <div className={styles.lower}>
         <LastMessage message={props.lastMessage ? props.lastMessage : ""} />

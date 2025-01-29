@@ -8,6 +8,7 @@ interface SidebarUserProps {
   username: string
   photoURL: string
   lastMessage?: string
+  lastMessageDate?: string
   messages: number
   isOnline?: boolean
   isSelected?: boolean
@@ -34,6 +35,7 @@ const SidebarUser = React.memo((props: SidebarUserProps) => {
       <SidebarUserBody
         name={props.username}
         lastMessage={props.lastMessage}
+        lastMessageDate={props.lastMessageDate}
         messages={props.messages}
       />
     </button>
