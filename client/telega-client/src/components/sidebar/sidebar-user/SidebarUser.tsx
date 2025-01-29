@@ -4,7 +4,7 @@ import Avatar from "../../common/avatar/Avatar"
 import SidebarUserBody from "./body/SidebarUserBody"
 
 interface SidebarUserProps {
-  name: string
+  username: string
   photoURL: string
   lastMessage?: string
   messages: number
@@ -16,11 +16,11 @@ export default function SidebarUser(props: SidebarUserProps) {
     <button className={styles.container}>
       <Avatar
         url={props.photoURL}
-        alt={props.name + " avatar"}
+        alt={props.username + " avatar"}
         isOnline={props.isOnline}
       />
       <SidebarUserBody
-        name={props.name}
+        name={props.username}
         lastMessage={props.lastMessage}
         messages={props.messages}
       />

@@ -20,4 +20,8 @@ export const OColor = {
   SidebarCircleActiveDark: "rgba(255, 255, 255, 0.9)",
   TextBackgroundColorWhite: "rgba(0, 0, 0, 0.16)",
   TextBackgroundColorDark: "rgba(255, 255, 255, 0.16)",
+  ScrollbarTrackWhite: "rgba(0, 0, 0, 0.088)",
+  ScrollbarThumbWhite: "rgba(0, 0, 0, 0.3)",
+  ScrollbarTrackDark: "rgba(255, 255, 255, 0.088)",
+  ScrollbarThumbDark: "rgba(255, 255, 255, 0.3)",
 } as const

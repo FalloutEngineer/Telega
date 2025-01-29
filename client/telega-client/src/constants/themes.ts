@@ -13,6 +13,8 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--text-background-color": OColor.TextBackgroundColorWhite,
     "--sidebar-circle-inactive": OColor.SidebarCircleInactiveWhite,
     "--sidebar-circle-active": OColor.SidebarCircleActiveWhite,
+    "--scrollbar-track": OColor.ScrollbarTrackWhite,
+    "--scrollbar-thumb": OColor.ScrollbarThumbWhite,
   },
   dark: {
     "--text-color": OColor.TextDark,
@@ -26,5 +28,7 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--text-background-color": OColor.TextBackgroundColorDark,
     "--sidebar-circle-inactive": OColor.SidebarCircleInactiveDark,
     "--sidebar-circle-active": OColor.SidebarCircleActiveDark,
+    "--scrollbar-track": OColor.ScrollbarTrackDark,
+    "--scrollbar-thumb": OColor.ScrollbarThumbDark,
   },
 }

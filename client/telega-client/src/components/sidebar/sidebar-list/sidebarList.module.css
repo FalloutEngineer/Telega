@@ -5,6 +5,33 @@
   flex-direction: column;
   padding: 0;
   margin: 0;
+
+  height: calc(100vh - 24px);
+}
+
+.virtuoso {
+  height: calc(100vh - 24px);
+
+  overflow-y: scroll;
+  position: relative;
+}
+
+.virtuoso::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+.virtuoso::-webkit-scrollbar-track,
+.virtuoso::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50px;
+}
+
+.virtuoso:hover::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+.virtuoso:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
 }
 
 .item {

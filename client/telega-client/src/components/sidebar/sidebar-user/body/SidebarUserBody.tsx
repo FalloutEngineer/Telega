@@ -9,6 +9,7 @@ interface SidebarUserBodyProps {
   name: string
   lastMessage?: string
   messages: number
+  date?: Date
 }
 
 export default function SidebarUserBody(props: SidebarUserBodyProps) {
