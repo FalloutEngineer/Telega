@@ -1,8 +1,11 @@
 import isDateToday from "./isDateToday"
+import isOlderThanOneWeek from "./isOlderThanOneWeek"
 
 const getFormattedLastTimeMessage = (lastTime: string): string => {
   const givenDate = new Date(lastTime)
   const isToday = isDateToday(givenDate)
+  const isOlderThanWeek = isOlderThanOneWeek(givenDate)
+  const locale = navigator.language
 
   if (isToday) {
     const dateObj = {
@@ -32,9 +35,13 @@ const getFormattedLastTimeMessage = (lastTime: string): string => {
 
     return `${dateObj.hf}${dateObj.hs}:${dateObj.mf}${dateObj.ms}`
   } else {
-    return givenDate.toLocaleDateString("en-US", {
-      weekday: "short",
-    })
+    if (isOlderThanWeek) {
+      return givenDate.toLocaleDateString(locale)
+    } else {
+      return givenDate.toLocaleDateString("en-US", {
+        weekday: "short",
+      })
+    }
   }
 }
 export default getFormattedLastTimeMessage
