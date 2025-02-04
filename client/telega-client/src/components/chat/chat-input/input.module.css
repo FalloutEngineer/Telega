@@ -1,0 +1,49 @@
+.inputContainer {
+  width: 100%;
+  box-sizing: border-box;
+
+  height: 8vh;
+
+  min-height: 50px;
+
+  max-height: 90px;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--menu-background-color);
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 16px 25px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.hint {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.hintText {
+  color: var(--text-color);
+  opacity: 0.25;
+
+  border: none;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  box-sizing: border-box;
+  height: 100%;
+
+  padding: 16px 25px;
+}

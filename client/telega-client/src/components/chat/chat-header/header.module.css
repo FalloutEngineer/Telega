@@ -1,0 +1,31 @@
+.headerContainer {
+  background-color: var(--menu-background-color);
+
+  width: 100%;
+  max-height: 10vh;
+  height: 100%;
+  min-height: 70px;
+  box-sizing: border-box;
+
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  color: var(--main-text-color);
+}
+
+.subheading {
+  display: flex;
+  font-size: 0.95em;
+}
