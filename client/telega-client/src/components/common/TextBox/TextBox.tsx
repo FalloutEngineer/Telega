@@ -8,7 +8,8 @@ type TextBoxProps = {
   placeholder?: string
   readonly?: boolean
   maxRows?: number
-  style?: React.CSSProperties
+  innerStyle?: React.CSSProperties
+  containerStyle?: React.CSSProperties
   ref: LegacyRef<HTMLSpanElement>
   onChange?: (e: React.ChangeEvent<HTMLSpanElement>) => void
   tabIndex?: number
@@ -45,12 +46,12 @@ const TextBox = React.memo((props: TextBoxProps) => {
   const getTabIndex = props.tabIndex ? props.tabIndex : 0
 
   return (
-    <p className={`${styles.textboxContainer}`}>
+    <p className={`${styles.textboxContainer}`} style={props.containerStyle}>
       <span
         role="textbox"
         contentEditable={isContendEditable}
         className={`${styles.textbox} ${getCursorClass} ${getSelectableClass}`}
-        style={props.style}
+        style={props.innerStyle}
         ref={props.ref}
         onKeyDown={handleKeyDown}
         onInput={inputHandler}

@@ -40,6 +40,14 @@ const ChatInput = React.memo(() => {
         onChange={onMessageChange}
         placeholder="Write a message..."
         readonly={isInputBlocked}
+        containerStyle={{
+          padding: "16px 25px",
+          maxHeight: "50vh",
+        }}
+        innerStyle={{
+          overflowY: "scroll",
+          msOverflowY: "scroll",
+        }}
       />
       {isSendingEnabled ? (
         <div className={styles.hint} aria-label="Press Enter to send message">
