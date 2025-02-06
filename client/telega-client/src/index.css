@@ -50,6 +50,28 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cursorText {
+  cursor: text;
+}
+
+.cursorAuto {
+  cursor: auto;
+}
+
+.selectable {
+  user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+}
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;

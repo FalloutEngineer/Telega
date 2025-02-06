@@ -1,0 +1,1 @@
+type TextDirection = "rtl" | "ltr"

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import styles from "./input.module.css"
+import TextBox from "../../common/TextBox/TextBox"
 
 const ChatInput = React.memo(() => {
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -7,8 +8,8 @@ const ChatInput = React.memo(() => {
   const [isSending, setIsSending] = useState(false)
   const [isSendingEnabled, setisSendingEnabled] = useState(false)
 
-  const onMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value.trim() !== "") {
+  const onMessageChange = (e: React.ChangeEvent<HTMLSpanElement>) => {
+    if (e.target.innerText.trim() !== "") {
       setisSendingEnabled(true)
     } else {
       setisSendingEnabled(false)
@@ -25,7 +26,7 @@ const ChatInput = React.memo(() => {
 
   return (
     <div className={styles.inputContainer}>
-      <textarea
+      {/* <textarea
         className={styles.input}
         name="messageInput"
         id="messageInput"
@@ -34,6 +35,11 @@ const ChatInput = React.memo(() => {
         onChange={onMessageChange}
         disabled={isInputBlocked}
         rows={13}
+      /> */}
+      <TextBox
+        onChange={onMessageChange}
+        placeholder="hello"
+        readonly={isInputBlocked}
       />
       {isSendingEnabled ? (
         <div className={styles.hint} aria-label="Press Enter to send message">

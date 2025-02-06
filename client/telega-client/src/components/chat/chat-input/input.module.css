@@ -2,11 +2,11 @@
   width: 100%;
   box-sizing: border-box;
 
-  height: 8vh;
+  min-height: 8vh;
 
-  min-height: 50px;
+  /* min-height: 50px; */
 
-  max-height: 90px;
+  /* max-height: 90px; */
 
   display: flex;
   justify-content: space-between;
@@ -21,6 +21,8 @@
   padding: 16px 25px;
 
   width: 100%;
+
+  height: fit-content;
 
   display: flex;
   flex-wrap: nowrap;
