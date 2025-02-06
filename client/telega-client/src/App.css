@@ -38,6 +38,14 @@
   --search-height: 24px;
 }
 
+::-moz-selection {
+  background: var(--highlight-text-color);
+}
+
+::selection {
+  background: var(--highlight-text-color);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

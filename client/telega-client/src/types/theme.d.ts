@@ -14,4 +14,5 @@ interface Theme {
   "--sidebar-circle-active": Color
   "--scrollbar-track": Color
   "--scrollbar-thumb": Color
+  "--highlight-text-color": Color
 }
