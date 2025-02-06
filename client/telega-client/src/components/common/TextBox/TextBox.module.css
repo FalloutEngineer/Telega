@@ -13,12 +13,14 @@
   flex-grow: 1;
   white-space: pre-wrap;
 
-  padding-right: 100%;
-
   max-width: 100%;
+  width: 100%;
+  text-align: left;
   box-sizing: border-box;
 
   z-index: 2;
+
+  /* padding-right: 100%; */
 }
 
 .textbox:empty::before {

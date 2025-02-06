@@ -72,6 +72,16 @@ textarea {
   -ms-user-select: none;
 }
 
+.ltr {
+  text-align: start;
+  direction: ltr;
+}
+
+.rtl {
+  text-align: end;
+  direction: rtl;
+}
+
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;

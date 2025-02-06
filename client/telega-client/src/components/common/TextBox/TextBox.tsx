@@ -1,4 +1,4 @@
-import React, { LegacyRef, useEffect } from "react"
+import React, { LegacyRef, useState } from "react"
 import styles from "./TextBox.module.css"
 import clearBrOnEditableEmpty from "../../../util/clearBrOnEditableEmpty"
 
@@ -8,25 +8,35 @@ type TextBoxProps = {
   placeholder?: string
   readonly?: boolean
   maxRows?: number
-  direction?: TextDirection
   style?: React.CSSProperties
-  ref?: LegacyRef<HTMLSpanElement>
+  ref: LegacyRef<HTMLSpanElement>
   onChange?: (e: React.ChangeEvent<HTMLSpanElement>) => void
   tabIndex?: number
+  onEnter?: (e: string) => void
 }
 
 const TextBox = React.memo((props: TextBoxProps) => {
+  const [value, setValue] = useState("")
+
   const isContendEditable =
     props.readonly !== undefined ? !props.readonly : true
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault()
+      if (props.onEnter) {
+        props.onEnter(value)
+      }
+    }
+  }
 
   const inputHandler = (e: React.ChangeEvent<HTMLSpanElement>) => {
     clearBrOnEditableEmpty(e)
     if (props.onChange) {
       props.onChange(e)
     }
+    setValue(e.target.innerText)
   }
-
-  useEffect(() => {})
 
   const getCursorClass = isContendEditable ? "cursorText" : "cursorAuto"
 
@@ -42,6 +52,7 @@ const TextBox = React.memo((props: TextBoxProps) => {
         className={`${styles.textbox} ${getCursorClass} ${getSelectableClass}`}
         style={props.style}
         ref={props.ref}
+        onKeyDown={handleKeyDown}
         onInput={inputHandler}
         data-placeholder={props.placeholder}
         tabIndex={getTabIndex}

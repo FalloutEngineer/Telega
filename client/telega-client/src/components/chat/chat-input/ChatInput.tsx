@@ -38,7 +38,7 @@ const ChatInput = React.memo(() => {
       /> */}
       <TextBox
         onChange={onMessageChange}
-        placeholder="hello"
+        placeholder="Write a message..."
         readonly={isInputBlocked}
       />
       {isSendingEnabled ? (
@@ -47,6 +47,7 @@ const ChatInput = React.memo(() => {
             onClick={sendMessage}
             className={styles.hintText}
             aria-hidden="true"
+            tabIndex={0}
           >
             {isSending ? "Sending..." : "Enter"}
           </button>
