@@ -19,6 +19,17 @@
   border: none;
   font-size: 1rem;
   padding: 16px 25px;
+
+  width: 100%;
+
+  display: flex;
+  flex-wrap: nowrap;
+
+  resize: none;
+}
+
+.input::-webkit-scrollbar {
+  display: none;
 }
 
 .input:focus {
