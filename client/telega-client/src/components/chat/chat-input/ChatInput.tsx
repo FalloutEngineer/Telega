@@ -26,16 +26,6 @@ const ChatInput = React.memo(() => {
 
   return (
     <div className={styles.inputContainer}>
-      {/* <textarea
-        className={styles.input}
-        name="messageInput"
-        id="messageInput"
-        placeholder="Write a message..."
-        ref={inputRef}
-        onChange={onMessageChange}
-        disabled={isInputBlocked}
-        rows={13}
-      /> */}
       <TextBox
         onChange={onMessageChange}
         placeholder="Write a message..."

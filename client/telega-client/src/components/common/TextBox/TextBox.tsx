@@ -1,6 +1,6 @@
 import React, { LegacyRef, useState } from "react"
 import styles from "./TextBox.module.css"
-import clearBrOnEditableEmpty from "../../../util/clearBrOnEditableEmpty"
+import isStringContainsOnlyBr from "../../../util/isStringContainsOnlyBr"
 
 type TextBoxProps = {
   name?: string
@@ -32,7 +32,9 @@ const TextBox = React.memo((props: TextBoxProps) => {
   }
 
   const inputHandler = (e: React.ChangeEvent<HTMLSpanElement>) => {
-    clearBrOnEditableEmpty(e)
+    if (isStringContainsOnlyBr(e.target.innerHTML)) {
+      e.target.innerText = ""
+    }
     if (props.onChange) {
       props.onChange(e)
     }
