@@ -6,7 +6,8 @@
 
   /* min-height: 50px; */
 
-  /* max-height: 90px; */
+  height: 100%;
+  max-height: fit-content;
 
   display: flex;
   justify-content: space-between;
@@ -22,7 +23,9 @@
 
   width: 100%;
 
-  height: fit-content;
+  height: 100%;
+  max-height: fit-content;
+  min-height: 16px;
 
   display: flex;
   flex-wrap: nowrap;

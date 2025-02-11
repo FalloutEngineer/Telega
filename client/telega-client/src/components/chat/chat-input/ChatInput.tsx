@@ -33,10 +33,14 @@ const ChatInput = React.memo(() => {
         containerStyle={{
           padding: "16px 25px",
           maxHeight: "50vh",
+          boxSizing: "border-box",
+          height: "fit-content",
         }}
         innerStyle={{
           overflowY: "scroll",
           msOverflowY: "scroll",
+          height: "100%",
+          minHeight: "24px",
         }}
       />
       {isSendingEnabled ? (
