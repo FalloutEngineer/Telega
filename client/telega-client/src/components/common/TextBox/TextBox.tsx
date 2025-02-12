@@ -1,4 +1,4 @@
-import React, { LegacyRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styles from "./TextBox.module.css"
 import isStringContainsOnlyBr from "../../../util/isStringContainsOnlyBr"
 
@@ -10,20 +10,21 @@ type TextBoxProps = {
   maxRows?: number
   innerStyle?: React.CSSProperties
   containerStyle?: React.CSSProperties
-  ref: LegacyRef<HTMLSpanElement>
   onChange?: (e: React.ChangeEvent<HTMLSpanElement>) => void
   tabIndex?: number
   onEnter?: (e: string) => void
+  value?: string
 }
 
 const TextBox = React.memo((props: TextBoxProps) => {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState(props.value ?? "")
+  const spanRef = useRef<HTMLSpanElement>(null)
 
   const isContendEditable =
     props.readonly !== undefined ? !props.readonly : true
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey && value !== "") {
       e.preventDefault()
       if (props.onEnter) {
         props.onEnter(value)
@@ -35,10 +36,10 @@ const TextBox = React.memo((props: TextBoxProps) => {
     if (isStringContainsOnlyBr(e.target.innerHTML)) {
       e.target.innerText = ""
     }
+    setValue(e.target.innerText)
     if (props.onChange) {
       props.onChange(e)
     }
-    setValue(e.target.innerText)
   }
 
   const getCursorClass = isContendEditable ? "cursorText" : "cursorAuto"
@@ -47,6 +48,15 @@ const TextBox = React.memo((props: TextBoxProps) => {
 
   const getTabIndex = props.tabIndex ? props.tabIndex : 0
 
+  useEffect(() => {
+    if (props.value) {
+      setValue(props.value)
+    }
+    if (spanRef.current && props.value !== spanRef.current.innerText) {
+      spanRef.current.innerText = props.value ?? ""
+    }
+  }, [props.value])
+
   return (
     <p className={`${styles.textboxContainer}`} style={props.containerStyle}>
       <span
@@ -54,7 +64,7 @@ const TextBox = React.memo((props: TextBoxProps) => {
         contentEditable={isContendEditable}
         className={`${styles.textbox} ${getCursorClass} ${getSelectableClass}`}
         style={props.innerStyle}
-        ref={props.ref}
+        ref={spanRef}
         onKeyDown={handleKeyDown}
         onInput={inputHandler}
         data-placeholder={props.placeholder}

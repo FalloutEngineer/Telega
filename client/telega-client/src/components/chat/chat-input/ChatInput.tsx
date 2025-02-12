@@ -8,7 +8,10 @@ const ChatInput = React.memo(() => {
   const [isSending, setIsSending] = useState(false)
   const [isSendingEnabled, setisSendingEnabled] = useState(false)
 
+  const [inputValue, setInputValue] = useState("")
+
   const onMessageChange = (e: React.ChangeEvent<HTMLSpanElement>) => {
+    setInputValue(e.target.innerText)
     if (e.target.innerText.trim() !== "") {
       setisSendingEnabled(true)
     } else {
@@ -24,12 +27,20 @@ const ChatInput = React.memo(() => {
     }
   }
 
+  const clearInput = () => {
+    setInputValue("")
+  }
+
   return (
     <div className={styles.inputContainer}>
       <TextBox
         onChange={onMessageChange}
         placeholder="Write a message..."
         readonly={isInputBlocked}
+        onEnter={() => {
+          clearInput()
+        }}
+        value={inputValue}
         containerStyle={{
           padding: "16px 25px",
           maxHeight: "50vh",
