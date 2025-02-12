@@ -15,4 +15,5 @@ interface Theme {
   "--scrollbar-track": Color
   "--scrollbar-thumb": Color
   "--highlight-text-color": Color
+  "--base-rgb": Color
 }

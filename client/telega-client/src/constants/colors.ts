@@ -12,6 +12,8 @@ export const OColor = {
   SidebarCircleActiveWhite: "rgba(0, 0, 0, 0.9)",
   TextDark: "rgba(255, 255, 255, 0.6)",
   TextMainDark: "rgba(255, 255, 255, 1)",
+  DarkBaseRGB: "255, 255, 255",
+  LightBaseRGB: "0, 0, 0",
   BackgroundDark: "#242424",
   MenuBackgroundDark: "rgba(0, 0, 0, 0.142)",
   MenuBackgroundHighlightedDark: "rgba(255, 255, 255, 0.07)",

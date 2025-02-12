@@ -15,6 +15,7 @@ const ChatBody = React.memo(() => {
       date: new Date(),
       id: "1",
       textBody: "Hello, world",
+      status: "read",
     },
     {
       from: "2",
@@ -27,6 +28,48 @@ const ChatBody = React.memo(() => {
       date: new Date(),
       id: "3",
       textBody: "Nice to meet you!",
+      status: "read",
+    },
+    {
+      from: "2",
+      date: new Date(),
+      id: "4",
+      textBody: "Hello, world",
+    },
+    {
+      from: "1",
+      date: new Date(),
+      id: "5",
+      textBody: "Hello, too!",
+      status: "read",
+    },
+    {
+      from: "1",
+      date: new Date(),
+      id: "6",
+      textBody:
+        "Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!Nice to meet you!",
+      status: "read",
+    },
+    {
+      from: "2",
+      date: new Date(),
+      id: "7",
+      textBody: "Hello, world",
+    },
+    {
+      from: "1",
+      date: new Date(),
+      id: "8",
+      textBody: "Hello, too!",
+      status: "received",
+    },
+    {
+      from: "1",
+      date: new Date(),
+      id: "9",
+      textBody: "Nice to meet you!",
+      status: "sending",
     },
   ])
 
@@ -36,7 +79,7 @@ const ChatBody = React.memo(() => {
         {messages.map((message) => {
           return (
             <Message
-              isMy={message.id === myId}
+              isMy={message.from === myId}
               key={message.id}
               {...message}
               sender={participants.get(message.from)}

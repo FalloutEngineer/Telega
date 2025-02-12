@@ -16,6 +16,7 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--sidebar-circle-active": OColor.SidebarCircleActiveWhite,
     "--scrollbar-track": OColor.ScrollbarTrackWhite,
     "--scrollbar-thumb": OColor.ScrollbarThumbWhite,
+    "--base-rgb": OColor.LightBaseRGB,
   },
   dark: {
     "--text-color": OColor.TextDark,
@@ -32,5 +33,6 @@ export const THEMES: Record<ThemeType, Theme> = {
     "--sidebar-circle-active": OColor.SidebarCircleActiveDark,
     "--scrollbar-track": OColor.ScrollbarTrackDark,
     "--scrollbar-thumb": OColor.ScrollbarThumbDark,
+    "--base-rgb": OColor.DarkBaseRGB,
   },
 }
