@@ -3,6 +3,8 @@ import styles from "./chatBody.module.css"
 import Message from "./message/MessageLazy"
 import useMyUserId from "../../../hooks/useMyUserId"
 import useChatParticipants from "../../../hooks/useChatParticipants"
+import { ErrorBoundary } from "react-error-boundary"
+import MessageFallback from "./message/MessageFallback"
 
 const ChatBody = React.memo(() => {
   //TODO: Caching messages
@@ -78,6 +80,13 @@ const ChatBody = React.memo(() => {
       textBody: "Nice to meet you!",
       status: "error",
     },
+    {
+      from: "",
+      date: new Date(),
+      id: "10",
+      textBody: "Nice to meet you!",
+      status: "error",
+    },
   ])
 
   return (
@@ -85,12 +94,16 @@ const ChatBody = React.memo(() => {
       <ul className={styles.messages}>
         {messages.map((message) => {
           return (
-            <Message
-              isMy={message.from === myId}
+            <ErrorBoundary
               key={message.id}
-              {...message}
-              sender={participants.get(message.from)}
-            />
+              fallback={<MessageFallback isMy={message.from === myId} />}
+            >
+              <Message
+                isMy={message.from === myId}
+                {...message}
+                sender={participants.get(message.from)}
+              />
+            </ErrorBoundary>
           )
         })}
       </ul>

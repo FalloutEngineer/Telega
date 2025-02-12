@@ -1,8 +1,16 @@
 import React from "react"
 import styles from "./message.module.css"
 
-const MessageFallback = () => {
-  return <li className={`${styles.messageBody}`}>MessageFallback</li>
+type MessageFallbackProps = {
+  isMy: boolean
+}
+
+const MessageFallback = (props: MessageFallbackProps) => {
+  return (
+    <li className={`${styles.messageBody} ${props.isMy ? styles.my : ""}`}>
+      Something went wrong...
+    </li>
+  )
 }
 
 export default MessageFallback

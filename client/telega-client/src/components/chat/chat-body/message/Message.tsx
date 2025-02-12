@@ -1,5 +1,4 @@
 import React from "react"
-import MessageFallback from "./MessageFallbackLazy"
 import styles from "./message.module.css"
 import MessageStatus from "./status/MessageStatusLazy"
 import getFormattedTime from "../../../../util/getFormattedLastTimeMessage"
@@ -7,6 +6,10 @@ import getFormattedTime from "../../../../util/getFormattedLastTimeMessage"
 type MessageProps = Message & { isMy: boolean } & { sender?: PublicUser }
 
 export default function Message(props: MessageProps) {
+  function throwIncorrectError() {
+    throw new Error("Incorrect message")
+  }
+
   return props.sender ? (
     <li className={`${styles.messageBody} ${props.isMy ? styles.my : ""}`}>
       {props.isMy ? null : (
@@ -31,6 +34,6 @@ export default function Message(props: MessageProps) {
       </div>
     </li>
   ) : (
-    <MessageFallback />
+    throwIncorrectError()
   )
 }
