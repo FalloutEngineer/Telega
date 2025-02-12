@@ -1,7 +1,7 @@
 import React from "react"
 import MessageFallback from "./MessageFallbackLazy"
 import styles from "./message.module.css"
-import MessageStatus from "./status/MessageStatus"
+import MessageStatus from "./status/MessageStatusLazy"
 import getFormattedTime from "../../../../util/getFormattedLastTimeMessage"
 
 type MessageProps = Message & { isMy: boolean } & { sender?: PublicUser }

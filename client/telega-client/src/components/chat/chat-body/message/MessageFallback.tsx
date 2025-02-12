@@ -1,5 +1,8 @@
 import React from "react"
+import styles from "./message.module.css"
 
-export default function MessageFallback() {
-  return <li>MessageFallback</li>
+const MessageFallback = () => {
+  return <li className={`${styles.messageBody}`}>MessageFallback</li>
 }
+
+export default MessageFallback
