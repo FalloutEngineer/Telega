@@ -2,6 +2,7 @@ import React from "react"
 import MessageFallback from "./MessageFallbackLazy"
 import styles from "./message.module.css"
 import MessageStatus from "./status/MessageStatus"
+import getFormattedTime from "../../../../util/getFormattedLastTimeMessage"
 
 type MessageProps = Message & { isMy: boolean } & { sender?: PublicUser }
 
@@ -20,9 +21,7 @@ export default function Message(props: MessageProps) {
       )}
       <div className={styles.main}>{props.textBody}</div>
       <div className={styles.bottom}>
-        <p className={styles.time}>
-          {props.date.getHours()}:{props.date.getMinutes()}
-        </p>
+        <p className={styles.time}>{getFormattedTime(props.date.toString())}</p>
         {props.isMy && props.status ? (
           <div className={styles.status}>
             {/* Change style according to message status or isMy */}

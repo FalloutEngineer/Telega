@@ -10,9 +10,12 @@ type MessageStatusProps = {
   size: string
 }
 
-export default function MessageStatus(props: MessageStatusProps) {
+const MessageStatus = (props: MessageStatusProps) => {
   return (
-    <div className={styles.body}>
+    <div
+      className={styles.body}
+      style={{ width: props.size, height: props.size }}
+    >
       {props.status === "sending" ? (
         <div className={styles.sending}>
           <SendingSVG
@@ -68,3 +71,5 @@ export default function MessageStatus(props: MessageStatusProps) {
     </div>
   )
 }
+
+export default MessageStatus

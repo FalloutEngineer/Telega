@@ -1,4 +1,9 @@
 .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
 }
 
 .sending {
@@ -8,6 +13,11 @@
 }
 
 .read {
+  position: relative;
+}
+
+.read svg:nth-child(1) {
+  position: absolute;
 }
 
 .error {
