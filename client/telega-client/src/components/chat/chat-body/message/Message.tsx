@@ -1,8 +1,7 @@
 import React from "react"
 import MessageFallback from "./MessageFallbackLazy"
 import styles from "./message.module.css"
-
-import ArrowSVG from "../../../../assets/icons/status-arrow.svg?react"
+import MessageStatus from "./status/MessageStatus"
 
 type MessageProps = Message & { isMy: boolean } & { sender?: PublicUser }
 
@@ -24,16 +23,10 @@ export default function Message(props: MessageProps) {
         <p className={styles.time}>
           {props.date.getHours()}:{props.date.getMinutes()}
         </p>
-        {props.isMy ? (
+        {props.isMy && props.status ? (
           <div className={styles.status}>
             {/* Change style according to message status or isMy */}
-            <ArrowSVG
-              style={{
-                color: "var(--highlight-color)",
-                height: "15px",
-                width: "15px",
-              }}
-            />
+            <MessageStatus status={props.status} size={"15px"} />
           </div>
         ) : null}
       </div>

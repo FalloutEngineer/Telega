@@ -71,6 +71,13 @@ const ChatBody = React.memo(() => {
       textBody: "Nice to meet you!",
       status: "sending",
     },
+    {
+      from: "1",
+      date: new Date(),
+      id: "10",
+      textBody: "Nice to meet you!",
+      status: "error",
+    },
   ])
 
   return (

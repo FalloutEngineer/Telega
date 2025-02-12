@@ -8,4 +8,4 @@ type Message = {
   status?: MessageStatus
 }
 
-type MessageStatus = "sending" | "received" | "read"
+type MessageStatus = "sending" | "received" | "read" | "error"
